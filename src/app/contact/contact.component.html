@@ -1,0 +1,23 @@
+<h2 style="text-align:center;background-color:red;">Contact Information Page:</h2>
+<div style="text-align:center;background-color:antiquewhite;">
+
+    <div>
+        <form #contact="ngForm" (ngSubmit)="Contact(contact)">
+            <div>
+                <label><b>Email Address:</b></label><br>
+                <input type="email" class="form-control"  [(ngModel)]="emailAddress" name="emailAddress" ><br><br>
+                <label><b>Mobile No:</b></label><br>
+                <input type="text" class="form-control" [(ngModel)]="Mobile" name="Mobile"><br><br>
+                <label><b>Address:</b></label><br>
+                <input type="text" class="form-control" [(ngModel)]="Address" name="Address"><br><br>
+                <label><b>Gender:</b></label><br>
+                <select [(ngModel)]="Gender" name="Gender"> 
+                    <option>Male</option>
+                    <option>Female</option>
+                </select><br><br><br>
+                <input type="submit" value="Submit" ><br><br>
+            </div>
+        </form>
+    </div>
+    
+</div>

@@ -1,0 +1,46 @@
+<br>
+<div class="navbar">
+    <button (click)="AddForm()"><b>Add New Product</b></button>
+</div>
+<br>
+<div class="box-outer" *ngIf="showForm">
+    <form class="signup_form" name="signup_form" method="post" action="" autocomplete="off" #addproduct="ngForm" (ngSubmit)="AddProduct()">
+        <h1 style="text-align: center;background-color: red;;">{{title}}</h1><br>
+        <label><b>Product Name</b></label><br><br>
+        <input type="text" name="name" class="input-control" placeholder="product name" [(ngModel)]="name">
+
+        <label><b>Description</b></label><br><br>
+        <input type="text" name="description" class="input-control" placeholder="description" [(ngModel)]="description">
+
+        <label><b>Image</b></label><br><br>
+        <input *ngIf="edit" type="file" name="image" class="input-control" [(ngModel)]="image" >
+
+        <label><b>price</b></label><br><br>
+        <input type="number" name="price" class="input-control" placeholder="price" [(ngModel)]="price">
+
+        <input *ngIf="add" type="submit" name="submit" class="button" value="Add product">
+        <input *ngIf="update" type="submit" name="submit" class="button" value="Update">
+        <button *ngIf="show" class="container" (click)="CloseForm()"><b>Cancel</b></button>
+    </form>
+    
+</div>
+
+    <br><br>
+<div *ngIf="products1;else err">
+    <div class="row">
+        <div class="column" *ngFor="let i of products1">
+                <div  class="card">
+                    <img src={{i.image}} style="width:200px;height:200px;" ><br><br>
+                    <b class="Name">Name:</b>{{i.name}}<br><br>
+                    <b class="des">Description:</b>{{i.description}}<br><br>
+                    <b class="price">Price:</b>{{i.price}}INR <br> <br>
+                    <input type="submit" name="submit" class="button" value="Edit" (click)="EditForm()">
+                    <br>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #err>
+    <h3>error in fetching products data</h3>
+</ng-template>
+

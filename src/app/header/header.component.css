@@ -1,0 +1,23 @@
+.navbar ul{
+    list-style:none;
+    padding:20px;
+    margin:0;
+}
+.navbar{
+    background-color:#333;
+    color:black;
+}
+.navbar button{
+    display:block;
+    padding:15px;
+    margin-right: 15px;
+    text-decoration:none;
+    color:red;
+}
+.navbar button:hover{
+    background-color:greenyellow;
+}
+.navbar ul{
+    display:flex;
+    justify-content:left;
+}

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="column" *ngFor="let i of products">
+            <div  class="card">
+                <img src={{i.image}} style="width:200px;height:200px;" ><br><br>
+                <b class="Name">Name:</b>{{i.name}}<br><br>
+                <b class="des">Description:</b>{{i.description}}<br><br>
+                <b class="price">Price:</b>{{i.price}}INR <br> <br>
+                <button><b>Add To Cart</b></button>
+                <br>
+        </div>
+    </div>
+</div>
